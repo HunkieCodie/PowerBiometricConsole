@@ -1,0 +1,19 @@
+﻿using System;
+using System.Collections.Generic;
+
+namespace PowerBiometricsAPI.Data.Models
+{
+    public partial class CustomerTypesDetail
+    {
+        public string CompanyId { get; set; }
+        public string DivisionId { get; set; }
+        public string DepartmentId { get; set; }
+        public string CustomerTypeId { get; set; }
+        public string ItemTypeId { get; set; }
+        public double? DiscountRate { get; set; }
+        public double? MinimiumOrder { get; set; }
+        public string LockedBy { get; set; }
+        public DateTime? LockTs { get; set; }
+        public string BranchCode { get; set; }
+    }
+}

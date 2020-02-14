@@ -1,0 +1,104 @@
+﻿using System;
+using System.Collections.Generic;
+
+namespace PowerBiometricsAPI.Data.Models
+{
+    public partial class VendorInformation
+    {
+        public string CompanyId { get; set; }
+        public string DivisionId { get; set; }
+        public string DepartmentId { get; set; }
+        public string VendorId { get; set; }
+        public string AccountStatus { get; set; }
+        public string VendorName { get; set; }
+        public string VendorAddress1 { get; set; }
+        public string VendorAddress2 { get; set; }
+        public string VendorAddress3 { get; set; }
+        public string VendorCity { get; set; }
+        public string VendorState { get; set; }
+        public string VendorZip { get; set; }
+        public string VendorCountry { get; set; }
+        public string VendorPhone { get; set; }
+        public string VendorFax { get; set; }
+        public string VendorEmail { get; set; }
+        public string VendorWebPage { get; set; }
+        public string VendorLogin { get; set; }
+        public string VendorPassword { get; set; }
+        public string VendorPasswordOld { get; set; }
+        public DateTime? VendorPasswordDate { get; set; }
+        public bool? VendorPasswordExpires { get; set; }
+        public int? VendorPasswordExpiresDate { get; set; }
+        public string Attention { get; set; }
+        public string VendorTypeId { get; set; }
+        public string AccountNumber { get; set; }
+        public string ContactId { get; set; }
+        public string RemittToName { get; set; }
+        public string RemittToAddress1 { get; set; }
+        public string RemittToAddress2 { get; set; }
+        public string RemittToAddress3 { get; set; }
+        public string RemittToCity { get; set; }
+        public string RemittToState { get; set; }
+        public string RemittToZip { get; set; }
+        public string RemittToCountry { get; set; }
+        public string RemittToPhone { get; set; }
+        public string RemittToFax { get; set; }
+        public string RemittToEmail { get; set; }
+        public string RemittToWebsite { get; set; }
+        public string RemittToNotes { get; set; }
+        public string ShipMethodId { get; set; }
+        public string WarehouseId { get; set; }
+        public string PriceMatrix { get; set; }
+        public DateTime? PriceMatrixCurrent { get; set; }
+        public string CurrencyId { get; set; }
+        public string TermsId { get; set; }
+        public string TermsStart { get; set; }
+        public string GlpurchaseAccount { get; set; }
+        public string TaxIdno { get; set; }
+        public string VattaxIdnumber { get; set; }
+        public string VatTaxOtherNumber { get; set; }
+        public string TaxGroupId { get; set; }
+        public decimal? CreditLimit { get; set; }
+        public decimal? AvailibleCredit { get; set; }
+        public string CreditComments { get; set; }
+        public string CreditRating { get; set; }
+        public DateTime? ApprovalDate { get; set; }
+        public DateTime? CustomerSince { get; set; }
+        public string FreightPayment { get; set; }
+        public string CustomerSpecialInstructions { get; set; }
+        public string SpecialTerms { get; set; }
+        public bool? Vendor1099 { get; set; }
+        public string Ediqualifier { get; set; }
+        public string Ediid { get; set; }
+        public string EditestQualifier { get; set; }
+        public string EditestId { get; set; }
+        public string EdicontactName { get; set; }
+        public string EdicontactAddressLine { get; set; }
+        public string EdicontactAgentPhone { get; set; }
+        public string EdicontactAgentFax { get; set; }
+        public bool? EdipurchaseOrders { get; set; }
+        public bool? Ediinvoices { get; set; }
+        public bool? EdishippingNotices { get; set; }
+        public bool? EdiorderStatus { get; set; }
+        public bool? Edipayments { get; set; }
+        public bool? Approved { get; set; }
+        public string ApprovedBy { get; set; }
+        public DateTime? ApprovedDate { get; set; }
+        public string EnteredBy { get; set; }
+        public bool? ConvertedFromCustomer { get; set; }
+        public string VendorRegionId { get; set; }
+        public string VendorSourceId { get; set; }
+        public string VendorIndustryId { get; set; }
+        public bool? Comfirmed { get; set; }
+        public DateTime? FirstContacted { get; set; }
+        public DateTime? LastFollowUp { get; set; }
+        public DateTime? NextFollowUp { get; set; }
+        public string ReferedBy { get; set; }
+        public DateTime? ReferedDate { get; set; }
+        public string ReferalUrl { get; set; }
+        public bool? Hot { get; set; }
+        public string LockedBy { get; set; }
+        public DateTime? LockTs { get; set; }
+        public double? AccountBalance { get; set; }
+        public string BranchCode { get; set; }
+    }
+}

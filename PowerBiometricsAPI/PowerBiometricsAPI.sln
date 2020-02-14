@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2005
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PowerBiometricsAPI", "PowerBiometricsAPI\PowerBiometricsAPI.csproj", "{BEE89067-0F67-4F73-A48F-FECE8AA891CB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PowerBiometricsAPI.Data", "PowerBiometricsAPI.Data\PowerBiometricsAPI.Data.csproj", "{94B248A5-19F5-403C-83B0-81627CBB0389}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BEE89067-0F67-4F73-A48F-FECE8AA891CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BEE89067-0F67-4F73-A48F-FECE8AA891CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BEE89067-0F67-4F73-A48F-FECE8AA891CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BEE89067-0F67-4F73-A48F-FECE8AA891CB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94B248A5-19F5-403C-83B0-81627CBB0389}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94B248A5-19F5-403C-83B0-81627CBB0389}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94B248A5-19F5-403C-83B0-81627CBB0389}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94B248A5-19F5-403C-83B0-81627CBB0389}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CB0601DC-E5E1-4E7B-9225-B7BB3C7D9863}
+	EndGlobalSection
+EndGlobal

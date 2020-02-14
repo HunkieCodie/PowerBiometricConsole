@@ -1,0 +1,11 @@
+C:\inetpub\wwwroot\PowerBiometricsAPI\PowerBiometricsAPI.Data\bin\Release\netcoreapp2.0\PowerBiometricsAPI.Data.deps.json
+C:\inetpub\wwwroot\PowerBiometricsAPI\PowerBiometricsAPI.Data\bin\Release\netcoreapp2.0\PowerBiometricsAPI.Data.runtimeconfig.json
+C:\inetpub\wwwroot\PowerBiometricsAPI\PowerBiometricsAPI.Data\bin\Release\netcoreapp2.0\PowerBiometricsAPI.Data.runtimeconfig.dev.json
+C:\inetpub\wwwroot\PowerBiometricsAPI\PowerBiometricsAPI.Data\bin\Release\netcoreapp2.0\PowerBiometricsAPI.Data.dll
+C:\inetpub\wwwroot\PowerBiometricsAPI\PowerBiometricsAPI.Data\bin\Release\netcoreapp2.0\PowerBiometricsAPI.Data.pdb
+C:\inetpub\wwwroot\PowerBiometricsAPI\PowerBiometricsAPI.Data\obj\Release\netcoreapp2.0\PowerBiometricsAPI.Data.csproj.CoreCompileInputs.cache
+C:\inetpub\wwwroot\PowerBiometricsAPI\PowerBiometricsAPI.Data\obj\Release\netcoreapp2.0\PowerBiometricsAPI.Data.AssemblyInfoInputs.cache
+C:\inetpub\wwwroot\PowerBiometricsAPI\PowerBiometricsAPI.Data\obj\Release\netcoreapp2.0\PowerBiometricsAPI.Data.AssemblyInfo.cs
+C:\inetpub\wwwroot\PowerBiometricsAPI\PowerBiometricsAPI.Data\obj\Release\netcoreapp2.0\PowerBiometricsAPI.Data.dll
+C:\inetpub\wwwroot\PowerBiometricsAPI\PowerBiometricsAPI.Data\obj\Release\netcoreapp2.0\PowerBiometricsAPI.Data.pdb
+C:\inetpub\wwwroot\PowerBiometricsAPI\PowerBiometricsAPI.Data\obj\Release\netcoreapp2.0\PowerBiometricsAPI.Data.csprojResolveAssemblyReference.cache
