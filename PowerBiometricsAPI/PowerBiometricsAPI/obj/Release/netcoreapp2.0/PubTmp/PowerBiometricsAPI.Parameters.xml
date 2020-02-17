@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <parameters>
-  <parameter name="IIS Web Application Name" description="" value="Default Web Site/PowerBiometricAPI" tags="IisApp">
+  <parameter name="IIS Web Application Name" description="" value="Default Web Site/PowerBiometricsAPI" tags="IisApp">
     <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\inetpub\\wwwroot\\PowerBiometricsAPI\\PowerBiometricsAPI\\obj\\Release\\netcoreapp2\.0\\PubTmp\\Out\\$" />
   </parameter>
 </parameters>

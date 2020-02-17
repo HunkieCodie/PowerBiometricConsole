@@ -16,7 +16,7 @@ namespace Power_Biometric
         public static SqlDataAdapter sqlDataAdapter;
         public static DataTable dataTable;
         public static SqlDataReader sqlDataReader;
-        public static string connectionString = "Data Source=.;User ID = enterprise; password=entx!2003n;Database=Biometrics;Persist Security Info=True";
+        public static string connectionString = Utility.connectionString;
         static DataAccess()
         {
             sqlConnection = new SqlConnection(connectionString);
@@ -68,12 +68,14 @@ namespace Power_Biometric
             return ReturnDataTable();
         }
 
-        public static DataTable GetTransactionTimeDetails(String TableName, String TransactionTime, String Synchronized, DateTime TransactionTimeValue)
+        public static DataTable GetTransactionTimeDetails(String TableName, String TransactionTime, String UserID, String Synchronized, DateTime TransactionTimeValue)
         {
             try
             {
-                string query = "SELECT " + TransactionTime + " FROM " + TableName +
-                    " WHERE CAST(" + TransactionTime + " AS DATE) = '" + TransactionTimeValue + "' AND ISNULL(" + Synchronized +", 0) = 0";
+                string query = "SELECT * " + " FROM " + TableName +
+                    " WHERE CAST(" + TransactionTime + " AS DATE) = '" + TransactionTimeValue + 
+                    "' AND ISNULL(" + Synchronized +", 0) = 0 AND " +
+                   "IsNull(" + UserID + ", '') <> '' AND " + UserID + " <> 'Unknown' ";
                 sqlCommand = new SqlCommand(query, sqlConnection);
             }
             catch (Exception ex)
@@ -97,25 +99,37 @@ namespace Power_Biometric
             return ReturnDataTable();
         }
 
-        public static DataTable GetClockInClockOutById(String TableName, String UserID, String TransactionTime, String UserIDValue, DateTime TransactionTimeValue)
+        //public static DataTable GetClockInClockOutById(String TableName, String UserID, String TransactionTime, String UserIDValue, DateTime TransactionTimeValue)
+        //{
+        //    try
+        //    {
+        //        string query = "SELECT " + UserID + ", Min(" + TransactionTime + ") AS 'ClockIn', Max(" + TransactionTime + ") AS 'ClockOut' " +
+        //            "FROM " + TableName + "WHERE(CAST(" + TransactionTime + " AS DATE) = '" + TransactionTimeValue + "') " +
+        //            "AND UserID = '" + UserIDValue + "' GROUP BY '" + UserID + "'";
+        //        sqlCommand = new SqlCommand(query, sqlConnection);
+
+        //    }
+        //    catch (Exception ex)
+        //    {
+
+        //    }
+        //    return ReturnDataTable();
+
+        //}
+     
+        public static void UpdateSyncDetail(String TableName, String UpdateColumn, String UpdateValue)
         {
             try
             {
-                string query = "SELECT " + UserID + ", Min(" + TransactionTime + ") AS 'ClockIn', Max(" + TransactionTime + ") AS 'ClockOut' " +
-                    "FROM " + TableName + "WHERE(CAST(" + TransactionTime + " AS DATE) = '" + TransactionTimeValue + "') " +
-                    "AND UserID = '" + UserIDValue + "' GROUP BY '" + UserID + "'";
+                string query = "UPDATE " + TableName + " SET " + UpdateColumn + " = '" + UpdateValue + "'";
                 sqlCommand = new SqlCommand(query, sqlConnection);
-
+                sqlCommand.ExecuteNonQuery();
+                
             }
-            catch (Exception ex)
+            catch(Exception ex)
             {
 
             }
-            return ReturnDataTable();
-
         }
-
-        //public static void UpdateSyncDetails(String TableName, )
-
     }
 }

@@ -36,14 +36,14 @@ namespace PowerBiometricsAPI.Controllers
         public string Post([FromBody]List<Attendance> attendance)
         {
             List<PayrollHrpayrollAttHeader> payrollHrpayrollAttHeader = new List<PayrollHrpayrollAttHeader>();
-            Apitoken apiToken = new Apitoken();
+            //Apitoken apiToken = new Apitoken();
             Attendance att = attendance.ElementAtOrDefault(0);
 
             bool status = false;
             string finalResult = "failed";
             try
             {
-                apiToken = _DBContext.ApiToken.Where(a => a.Token == att.apiToken).FirstOrDefault();
+                var apiToken = _DBContext.ApiToken.Where(a => a.Token == att.apiToken).FirstOrDefault();
                 if (apiToken != null)
                 {
                     if (attendance != null)

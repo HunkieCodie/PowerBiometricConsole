@@ -10,4 +10,5 @@ C:\inetpub\wwwroot\PowerBiometricsAPI\PowerBiometricsAPI\obj\Debug\netcoreapp2.0
 C:\inetpub\wwwroot\PowerBiometricsAPI\PowerBiometricsAPI\obj\Debug\netcoreapp2.0\PowerBiometricsAPI.AssemblyInfo.cs
 C:\inetpub\wwwroot\PowerBiometricsAPI\PowerBiometricsAPI\obj\Debug\netcoreapp2.0\PowerBiometricsAPI.dll
 C:\inetpub\wwwroot\PowerBiometricsAPI\PowerBiometricsAPI\obj\Debug\netcoreapp2.0\PowerBiometricsAPI.pdb
-C:\inetpub\wwwroot\PowerBiometricsAPI\PowerBiometricsAPI\obj\Debug\netcoreapp2.0\PowerBiometricsAPI.csprojResolveAssemblyReference.cache
+C:\inetpub\wwwroot\PowerBiometricsAPI\PowerBiometricsAPI\obj\Debug\netcoreapp2.0\PowerBiometricsAPI.csprojAssemblyReference.cache
+C:\inetpub\wwwroot\PowerBiometricsAPI\PowerBiometricsAPI\obj\Debug\netcoreapp2.0\PowerBiometricsAPI.csproj.CopyComplete

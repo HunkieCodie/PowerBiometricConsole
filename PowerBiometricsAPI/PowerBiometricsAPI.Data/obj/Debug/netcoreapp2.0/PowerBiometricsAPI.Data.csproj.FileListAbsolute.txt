@@ -8,4 +8,4 @@ C:\inetpub\wwwroot\PowerBiometricsAPI\PowerBiometricsAPI.Data\obj\Debug\netcorea
 C:\inetpub\wwwroot\PowerBiometricsAPI\PowerBiometricsAPI.Data\obj\Debug\netcoreapp2.0\PowerBiometricsAPI.Data.AssemblyInfo.cs
 C:\inetpub\wwwroot\PowerBiometricsAPI\PowerBiometricsAPI.Data\obj\Debug\netcoreapp2.0\PowerBiometricsAPI.Data.dll
 C:\inetpub\wwwroot\PowerBiometricsAPI\PowerBiometricsAPI.Data\obj\Debug\netcoreapp2.0\PowerBiometricsAPI.Data.pdb
-C:\inetpub\wwwroot\PowerBiometricsAPI\PowerBiometricsAPI.Data\obj\Debug\netcoreapp2.0\PowerBiometricsAPI.Data.csprojResolveAssemblyReference.cache
+C:\inetpub\wwwroot\PowerBiometricsAPI\PowerBiometricsAPI.Data\obj\Debug\netcoreapp2.0\PowerBiometricsAPI.Data.csprojAssemblyReference.cache

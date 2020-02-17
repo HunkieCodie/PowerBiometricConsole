@@ -10,30 +10,15 @@ using Newtonsoft.Json;
 
 namespace Power_Biometric
 {
-
-
-
     public class Program
     {
-        public static string token = "LHSHDKJHSKDHJSLDK";
+        string Token = Utility.Token;
         static HttpClient client = new HttpClient();
 
         static void Main(string[] args)
         {
             populateHeaderTable();
-            //DataTable dt = new DataTable();
-            //try
-            //{
-            //    dt = DataAccess.GetTransactionTimeDetails("[ Biometrics].[dbo].[NGAC_SYSLOG]", "TransactionTime", "Synchronized", new DateTime(2015, 05, 19));
-            //    foreach (DataRow item in dt.Rows)
-            //    {
-            //        Console.WriteLine(item["TransactionTime"]);
-            //    }
-            //    Console.ReadKey();
-            //}
-            //catch (Exception e)
-            //{
-            //}
+         
         }
 
 
@@ -43,14 +28,15 @@ namespace Power_Biometric
             List<AttendanceDetail> attendanceDetail = new List<AttendanceDetail>();
             try
             {
-                getData = DataAccess.GetTransactionTimeDetails("[ Biometrics].[dbo].[NGAC_SYSLOG]", "TransactionTime", "Synchronized", AttendanceDate);
+                getData = DataAccess.GetTransactionTimeDetails("NGAC_SYSLOG", "TransactionTime", "UserID", "Synchronized", AttendanceDate);
                 foreach (DataRow dr in getData.Rows)
                 {
                     AttendanceDetail transactionDetailObj = new AttendanceDetail();
 
+                    string userid = dr["UserID"].ToString();
+                    transactionDetailObj.EmployeeId = userid;
                     DateTime dtTransactionDate = Convert.ToDateTime(dr["TransactionTime"].ToString());
                     dtTransactionDate = dtTransactionDate.Date;
-
                     transactionDetailObj.AttendanceDate = dtTransactionDate;
                     transactionDetailObj.TimeIn = Convert.ToDateTime(dr["TransactionTime"].ToString());
 
@@ -71,7 +57,7 @@ namespace Power_Biometric
             string statusMessage = "";
             try
             {
-                getData = DataAccess.GetTransactionTimeHeader("[ Biometrics].[dbo].[NGAC_SYSLOG]", "TransactionTime", "Synchronized");
+                getData = DataAccess.GetTransactionTimeHeader("NGAC_SYSLOG", "TransactionTime", "Synchronized");
                 if (getData != null)
                 {
                     if (getData.Rows.Count > 0)
@@ -81,13 +67,13 @@ namespace Power_Biometric
                             Attendance transactionObj = new Attendance();
                             transactionObj.AttendanceDate = Convert.ToDateTime(dr["Clock"].ToString());
                             transactionObj.EnteredDate = DateTime.Now;
-                            transactionObj.apiToken = token;
+                            transactionObj.apiToken = Utility.Token;
                             transactionObj.attendanceDetail = getAttendanceDetail(Convert.ToDateTime(dr["Clock"].ToString()));
                             attendanceList.Add(transactionObj);
                         }
 
                         var att = JsonConvert.SerializeObject(attendanceList);
-                        string url = "http://localhost:3295/api/powerbiometrics";
+                        string url = "http://localhost/PowerBiometricsAPI/api/powerbiometrics";
                         var response = client.PostAsync(url, new StringContent(att, Encoding.UTF8, "application/json"));
 
                         response.Wait();
@@ -97,6 +83,16 @@ namespace Power_Biometric
                             Uri attendanceUrl = result.Headers.Location;
                             statusMessage = result.Content.ReadAsStringAsync().Result;
                             Console.WriteLine(statusMessage);
+
+                            if(statusMessage == "success")
+                            {
+                                DataAccess.UpdateSyncDetail("NGAC_SYSLOG", "Synchronized", "1");
+                                return;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Sync failed");
+                            }
                         }
                     }
                     else

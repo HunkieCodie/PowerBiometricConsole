@@ -1,0 +1,1 @@
+﻿Data Source=.;User ID = enterprise; password=entx!2003n;Database=Biometrics;Persist Security Info=True
