@@ -11,3 +11,16 @@ C:\Users\PRO HP\source\repos\Power Biometric\Power Biometric\bin\Debug\Power Bio
 C:\Users\PRO HP\source\repos\Power Biometric\Power Biometric\bin\Debug\Power Biometric.application
 C:\Users\PRO HP\source\repos\Power Biometric\Power Biometric\obj\Debug\Power Biometric.exe.manifest
 C:\Users\PRO HP\source\repos\Power Biometric\Power Biometric\obj\Debug\Power Biometric.application
+C:\Users\PRO HP\source\repos\PowerBiometricConsoleApp\Power Biometric\bin\Debug\Power Biometric.exe.config
+C:\Users\PRO HP\source\repos\PowerBiometricConsoleApp\Power Biometric\bin\Debug\Power Biometric.exe.manifest
+C:\Users\PRO HP\source\repos\PowerBiometricConsoleApp\Power Biometric\bin\Debug\Power Biometric.application
+C:\Users\PRO HP\source\repos\PowerBiometricConsoleApp\Power Biometric\bin\Debug\Power Biometric.exe
+C:\Users\PRO HP\source\repos\PowerBiometricConsoleApp\Power Biometric\bin\Debug\Power Biometric.pdb
+C:\Users\PRO HP\source\repos\PowerBiometricConsoleApp\Power Biometric\bin\Debug\Newtonsoft.Json.dll
+C:\Users\PRO HP\source\repos\PowerBiometricConsoleApp\Power Biometric\bin\Debug\Newtonsoft.Json.xml
+C:\Users\PRO HP\source\repos\PowerBiometricConsoleApp\Power Biometric\obj\Debug\Power Biometric.csprojResolveAssemblyReference.cache
+C:\Users\PRO HP\source\repos\PowerBiometricConsoleApp\Power Biometric\obj\Debug\Power Biometric.csproj.CoreCompileInputs.cache
+C:\Users\PRO HP\source\repos\PowerBiometricConsoleApp\Power Biometric\obj\Debug\Power Biometric.exe.manifest
+C:\Users\PRO HP\source\repos\PowerBiometricConsoleApp\Power Biometric\obj\Debug\Power Biometric.application
+C:\Users\PRO HP\source\repos\PowerBiometricConsoleApp\Power Biometric\obj\Debug\Power Biometric.exe
+C:\Users\PRO HP\source\repos\PowerBiometricConsoleApp\Power Biometric\obj\Debug\Power Biometric.pdb

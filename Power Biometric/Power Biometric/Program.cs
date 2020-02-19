@@ -7,12 +7,13 @@ using System.Threading.Tasks;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace Power_Biometric
 {
     public class Program
     {
-        string Token = Utility.Token;
+        
         static HttpClient client = new HttpClient();
 
         static void Main(string[] args)
@@ -57,7 +58,7 @@ namespace Power_Biometric
             string statusMessage = "";
             try
             {
-                getData = DataAccess.GetTransactionTimeHeader("NGAC_SYSLOG", "TransactionTime", "Synchronized");
+                getData = DataAccess.GetTransactionTimeHeader("NGAC_SYSLOG", "TransactionTime", "UserID", "Synchronized");
                 if (getData != null)
                 {
                     if (getData.Rows.Count > 0)
@@ -73,9 +74,13 @@ namespace Power_Biometric
                         }
 
                         var att = JsonConvert.SerializeObject(attendanceList);
-                        string url = "http://localhost/PowerBiometricsAPI/api/powerbiometrics";
+                        string url = Utility.APIBaseURL + "/api/powerbiometrics";
                         var response = client.PostAsync(url, new StringContent(att, Encoding.UTF8, "application/json"));
 
+                        Console.WriteLine("Synchronizing...");
+
+                     
+          
                         response.Wait();
                         var result = response.Result;
                         if (result.IsSuccessStatusCode)
@@ -83,9 +88,10 @@ namespace Power_Biometric
                             Uri attendanceUrl = result.Headers.Location;
                             statusMessage = result.Content.ReadAsStringAsync().Result;
                             Console.WriteLine(statusMessage);
-
-                            if(statusMessage == "success")
+                           
+                            if (statusMessage == "success")
                             {
+                                Console.WriteLine(getData.Rows.Count + " attendance lists were added");
                                 DataAccess.UpdateSyncDetail("NGAC_SYSLOG", "Synchronized", "1");
                                 return;
                             }
@@ -94,6 +100,9 @@ namespace Power_Biometric
                                 Console.WriteLine("Sync failed");
                             }
                         }
+
+                       
+                       
                     }
                     else
                     {
@@ -111,10 +120,6 @@ namespace Power_Biometric
                 if(errorMessage == "One or more errors occured.")
                 {
                     Console.WriteLine("Is API running?");
-                }
-                else
-                {
-                    Console.WriteLine("API url is incorrect.");
                 }
             }
         }

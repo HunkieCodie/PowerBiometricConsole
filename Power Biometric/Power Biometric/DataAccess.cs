@@ -19,17 +19,19 @@ namespace Power_Biometric
         public static string connectionString = Utility.connectionString;
         static DataAccess()
         {
-            sqlConnection = new SqlConnection(connectionString);
-
-            if (sqlConnection.State == ConnectionState.Open)
-            {
-                sqlConnection.Close();
-                sqlConnection.Dispose();
-            }
+            
             try
             {
+                sqlConnection = new SqlConnection(connectionString);
+
+                if (sqlConnection.State == ConnectionState.Open)
+                {
+                    sqlConnection.Close();
+                    sqlConnection.Dispose();
+                }
                 sqlConnection.Open();
             }
+
             catch (Exception ex)
             {
 
@@ -38,10 +40,20 @@ namespace Power_Biometric
 
         public static DataTable ReturnDataTable()
         {
-            sqlDataAdapter = new SqlDataAdapter(sqlCommand);
-            dataTable = new DataTable();
-            sqlDataAdapter.Fill(dataTable);
+            try
+            {
+                sqlDataAdapter = new SqlDataAdapter(sqlCommand);
+                dataTable = new DataTable();
+                sqlDataAdapter.Fill(dataTable);
+            }
+            
+            catch (Exception ex)
+            {
+
+            }
+
             return dataTable;
+
         }
 
         public static DataTable ReturnDataTable(string query)
@@ -84,12 +96,13 @@ namespace Power_Biometric
             return ReturnDataTable();
         }
 
-        public static DataTable GetTransactionTimeHeader(String TableName, String TransactionTime, String Synchronized)
+        public static DataTable GetTransactionTimeHeader(String TableName, String TransactionTime, String UserID, String Synchronized)
         {
             try
             {
                 string query = "SELECT DISTINCT CAST(" + TransactionTime + " AS DATE) AS Clock FROM " +
-                    TableName + " WHERE ISNULL(" + Synchronized + ", 0) = 0" + " ORDER BY Clock ASC";
+                    TableName + " WHERE ISNULL(" + Synchronized + ", 0) = 0 AND " +
+                   "IsNull(" + UserID + ", '') <> '' AND " + UserID + " <> 'Unknown' ORDER BY Clock ASC";
                 sqlCommand = new SqlCommand(query, sqlConnection);
             }
             catch (Exception ex)

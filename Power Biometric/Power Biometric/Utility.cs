@@ -19,9 +19,15 @@ namespace Power_Biometric
 
         public static string FileContentRead = Directory.GetCurrentDirectory() + "\\" + "Token.txt";
         public static StreamReader objReader2 = new StreamReader(FileContentRead);
+        public static string FileContent = objReader2.ReadLine();
+        public static string content = FileContentRead;
 
-        public static string TOKEN = objReader2.ReadLine();
-        public static string Token = TOKEN;
+        static char[] delimeter = new char[] { '|' };
+
+        static string[] FileContentArray = FileContent.Split(delimeter, StringSplitOptions.RemoveEmptyEntries);
+        public static string Token = FileContentArray[0];
+        public static string APIBaseURL = FileContentArray[1];
+
 
 
 
