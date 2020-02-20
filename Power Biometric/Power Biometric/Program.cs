@@ -81,18 +81,29 @@ namespace Power_Biometric
 
                      
           
-                        response.Wait();
+                        
+                        try
+                        {
+                            response.Wait();
+                        }
+                        catch (AggregateException e){
+
+                        }
                         var result = response.Result;
                         if (result.IsSuccessStatusCode)
                         {
                             Uri attendanceUrl = result.Headers.Location;
                             statusMessage = result.Content.ReadAsStringAsync().Result;
+                            Console.WriteLine();
                             Console.WriteLine(statusMessage);
-                           
+
+                            DateTime syncDate = DateTime.Now;
                             if (statusMessage == "success")
                             {
+                                Console.WriteLine();
                                 Console.WriteLine(getData.Rows.Count + " attendance lists were added");
-                                DataAccess.UpdateSyncDetail("NGAC_SYSLOG", "Synchronized", "1");
+                                DataAccess.UpdateSyncDetail("NGAC_SYSLOG", "Synchronized", "1", "SyncBy", "Console Agent",
+                                    "SyncDate", syncDate);
                                 return;
                             }
                             else
