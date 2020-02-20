@@ -12,25 +12,34 @@ The token fetches the company details of the employee doing this synchronization
 ### Firstly: 
 Make sure the API is set up on the Internet Information services (IIS) and the link shows up on a browser.
 
+
 ### Secondly: 
 User must insert values into the APIToken table using the script in the file ‘RunningApp_Querires.txt’ which can be seen in the figure below too. This is done by inserting preferred values into the single quotation marks (‘ ’) in  the script.
 The values inserted in the ‘Token’ Column will enable us to consume the API. 
 
+![Add values to APIToken table](readMeImages/1.png)
+
+
 ### Thirdly: 
-The token inserted in the token column above is replaced with the default token value in the ‘Config.txt’ file. Also, the link gotten from the browser in the initial step of this guide is replaced with the API link in the ‘Token.txt’ file.
+The token inserted in the token column above is replaced with the default token value in the ‘Token.txt’ file. Also, the link gotten from the browser in the initial step of this guide is replaced with the API link in the ‘Token.txt’ file.
 The token and API link is separated by the pipe sign ‘|’ as seen below:
+
+![Add APIToken and APIBaseURL](readMeImages/2.png)
+
 
 ### Fourthly:
 The user changes the database name in the ‘Config.txt’ file as seen below:
+![Add connection string](readMeImages/3.png)
+
 
 ### Lastly:
 The user launches the application and the application works. This is seen in 3 stages:
  
 First stage:
-
+![](readMeImages/4.png)
 
 Second stage:
-
+![](readMeImages/5.png)
 
 Third stage:
-
+![](readMeImages/6.png)
