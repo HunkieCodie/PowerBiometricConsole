@@ -20,14 +20,23 @@ The values inserted in the ‘Token’ Column will enable us to consume the API.
 ![Add values to APIToken table](readMeImages/1.png)
 
 
-### Thirdly: 
+### Thirdly:
+Mapping of ‘UserID’ values from the Biometrics data table to the database where the attendance data is moved to must be done. This can be done manually without using queries. 
+
+In this case the other database is ‘EnterpriseBase’. Here:
+-	A table known as ‘PayrollEmployees’ should be edited manually.
+-	If column name ‘EmployeeBiometricID’ is not included, Create one. This is the column where the ‘userID’ from the Biometric database is linked to.
+-	Add the UserID values from Biometric database to the ‘EmployeeBiometricID’ column.
+-	Before adding, you may filter your mappings to where ‘EmployeeTypeID’ is ‘Salary’.
+
+### Fourthly: 
 The token inserted in the token column above is replaced with the default token value in the ‘Token.txt’ file. Also, the link gotten from the browser in the initial step of this guide is replaced with the API link in the ‘Token.txt’ file.
 The token and API link is separated by the pipe sign ‘|’ as seen below:
 
 ![Add APIToken and APIBaseURL](readMeImages/2.png)
 
 
-### Fourthly:
+### Fifthly:
 The user changes the database name in the ‘Config.txt’ file as seen below:
 ![Add connection string](readMeImages/3.png)
 
