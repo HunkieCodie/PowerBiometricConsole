@@ -1,0 +1,28 @@
+
+---------------------------------------------------------------
+ THE FOLLOWING QUERIES WERE USED IN THE DEVELOPMENT OF THE APP
+---------------------------------------------------------------
+
+(1) The SQL query below is used as query for the Transaction Header.
+SELECT DISTINCT CAST(TransactionTime  AS DATE) AS Clock 
+FROM  TableName
+WHERE ISNULL(Synchronized, 0) = '0' 
+	  AND  IsNull(UserID, '') <> '' 
+	  AND UserID  <> 'Unknown' 
+ORDER BY Clock ASC                    
+
+
+(2) The SQL query below is used as query for the Transaction Detail.
+SELECT * 
+FROM TableName
+WHERE CAST(TransactionTime AS DATE) = 'TransactionTimeValue' 
+      AND ISNULL(Synchronized, 0) = '0' 
+	  AND IsNull(UserID, '') <> '' 
+	  AND UserID <> 'Unknown'
+
+
+(3) The SQL query below is used as query to Update the synchronization columns for the SYS_LOG Table in Biometrics database. 
+UPDATE TableName 
+SET Synchronized = 'SynchronizedValue',
+    SyncBy = 'SyncByValue',
+    SyncDate = 'SyncDateValue' 
