@@ -1,0 +1,26 @@
+﻿------------------------------------------
+ QUERY FOR SETTING A TOKEN TO CONSUME API
+------------------------------------------
+
+USE EnterpriseBase /*EnterpriseBase is where the attendance data of employees is moved to*/
+
+DECLARE @CompanyID VARCHAR (36)
+DECLARE @DivisionID VARCHAR (36)
+DECLARE @DepartmentID VARCHAR (36)
+DECLARE @EmployeeID VARCHAR (36)
+DECLARE @Token VARCHAR (36)
+DECLARE @EmployeePassword VARCHAR (36)
+
+/*Insert values into the quotations below*/
+
+SET @CompanyID = ''
+SET @DivisionID = ''
+SET @DepartmentID = ''
+SET @EmployeeID = ''
+SET @Token = ''
+SET @EmployeePassword = ''
+
+INSERT INTO APIToken 
+(CompanyID, DivisionID, DepartmentID, EmployeeID, Token, EmployeePassword)
+VALUES(@CompanyID, @DivisionID, @DepartmentID, @EmployeeID, @Token, @EmployeePassword)
+
