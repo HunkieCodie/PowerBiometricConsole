@@ -1,0 +1,34 @@
+﻿
+----------------------------------------
+ BIOMETRIC SYNCHRONIZATION CONSOLE APP
+           Intitial Release
+	  	    Version 1.0.0 
+-----------------------------------------
+
+
+
+-----------------------------------------
+ COMPANY: Powersoft Integrated Solutions
+ AUTHOR: Promise Aduragbemi Shittu
+-----------------------------------------
+  RELEASE DATE: 20th of February, 2020
+-----------------------------------------
+
+
+
+					      KEY FEATURES OF CONSOLE APP
+-----------------------------------------------------------------------------------
+The Biometrics Synhronization Console App is a console application that moves the
+attendance data of employees from a Biometric App database to a specific database.
+
+This application comes with an API which requires a token to make it work.
+The token fetches the company details of the employee doing this synchronization.
+
+This application is designed to allow no interaction with it. 
+All a user has to do is to run the app.
+You may also decide to use the app with a task scheeduler which is super cool.
+
+NOTE: This console app does NOT synchronizes the attendance list for employees with:
+	- Empty or null UserID value
+	- 'Unknown' UserID value
+
